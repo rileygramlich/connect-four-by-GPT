@@ -1,5 +1,5 @@
 "use strict";
-console.log('connected');
+console.log("connected");
 const ROWS = 6;
 const COLUMNS = 7;
 const CELL_SIZE = 50;
@@ -63,6 +63,46 @@ function checkForWin(row, col) {
     }
     if (count >= 4) {
         return true;
+    }
+    count = 0;
+    let r = row - col;
+    let c = 0;
+    if (r < 0) {
+        c = -r;
+        r = 0;
+    }
+    while (r < 6 && c < 7) {
+        if (board[r][c] === currentPlayer) {
+            count++;
+            if (count === 4) {
+                return true;
+            }
+        }
+        else {
+            count = 0;
+        }
+        r++;
+        c++;
+    }
+    count = 0;
+    r = row + col;
+    c = 0;
+    if (r > 5) {
+        c = r - 5;
+        r = 5;
+    }
+    while (r >= 0 && c < 7) {
+        if (board[r][c] === currentPlayer) {
+            count++;
+            if (count === 4) {
+                return true;
+            }
+        }
+        else {
+            count = 0;
+        }
+        r--;
+        c++;
     }
     return false;
 }

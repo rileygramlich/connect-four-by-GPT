@@ -1,4 +1,4 @@
-console.log('connected')
+console.log("connected");
 
 // Define the constants for the game
 const ROWS = 6;
@@ -41,7 +41,9 @@ boardElement.addEventListener("click", (event) => {
   const target = event.target as HTMLTableCellElement;
   if (target.tagName === "TD") {
     const col = Array.from(target.parentElement!.children).indexOf(target);
-    const row = Array.from(boardElement.children).indexOf(target.parentElement!);
+    const row = Array.from(boardElement.children).indexOf(
+      target.parentElement!
+    );
     if (board[row][col] === "") {
       board[row][col] = currentPlayer;
       target.classList.add(currentPlayer);
@@ -68,7 +70,7 @@ function checkForWin(row: number, col: number): boolean {
   if (count >= 4) {
     return true;
   }
-  
+
   // Check vertically
   count = 0;
   for (let i = row; i >= 0 && board[i][col] === currentPlayer; i--) {
@@ -80,8 +82,50 @@ function checkForWin(row: number, col: number): boolean {
   if (count >= 4) {
     return true;
   }
+
+  count = 0;
+
+  // Check diagonally (top left to bottom right)
+  // Check positive diagonal win
+  let r = row - col;
+  let c = 0;
+  if (r < 0) {
+    c = -r;
+    r = 0;
+  }
+  while (r < 6 && c < 7) {
+    if (board[r][c] === currentPlayer) {
+      count++;
+      if (count === 4) {
+        return true;
+      }
+    } else {
+      count = 0;
+    }
+    r++;
+    c++;
+  }
+
+  count = 0;
+
+  // Check negative diagonal win
+  r = row + col;
+  c = 0;
+  if (r > 5) {
+    c = r - 5;
+    r = 5;
+  }
+  while (r >= 0 && c < 7) {
+    if (board[r][c] === currentPlayer) {
+      count++;
+      if (count === 4) {
+        return true;
+      }
+    } else {
+      count = 0;
+    }
+    r--;
+    c++;
+  }
   return false;
 }
-  
-  // Check diagonally (top left to bottom right)
-

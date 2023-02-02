@@ -38,7 +38,7 @@ Google Chrome and its developer tools was used to test and render the game durin
 ## Getting Started: 
 
 ### Demo:
-[Click to play game!](https://rileygramlich.github.io/checkers/)
+[Click to play game!](https://rileygramlich.github.io/connect-four-by-GPT/)
 
 ### Instructions:
 * The game is for two players, player 1 and player 2.

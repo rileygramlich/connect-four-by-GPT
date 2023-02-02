@@ -21,6 +21,7 @@ for (let row = 0; row < ROWS; row++) {
         const td = document.createElement("td");
         td.style.width = `${CELL_SIZE}px`;
         td.style.height = `${CELL_SIZE}px`;
+        td.classList.add("cell");
         tr.appendChild(td);
     }
     boardElement.appendChild(tr);

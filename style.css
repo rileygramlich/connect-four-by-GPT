@@ -1,25 +1,105 @@
 #game {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+}
+
+body {
+  background: #7f00ff;
+  background-size: cover;
+  font-family: monospace;
+  animation: color-change 20s ease-in-out infinite;
+}
+
+@keyframes color-change {
+  0% {
+    background-color: #7f00ff;
   }
-  
-  table {
-    border-collapse: collapse;
+  14.28% {
+    background-color: #7f00ff;
   }
-  
-  td {
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
+  28.57% {
+    background-color: #6100ff;
   }
-  
-  .red {
-    background-color: red;
+
+  42.86% {
+    background-color: #4b0082;
   }
-  
-  .yellow {
-    background-color: yellow;
+
+  57.15% {
+    background-color: #0000ff;
   }
-  
+
+  40% {
+    background-color: #ff7f00;
+  }
+  28.57% {
+    background-color: #007c17;
+  }
+  14.28% {
+    background-color: #99ac08;
+  }
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 10px;
+  margin: 10px 0;
+}
+
+.cell {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.cell:hover {
+  cursor: pointer;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5em;
+  margin-top: 50px;
+  color: white;
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .cell {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -32,13 +32,8 @@ The Document Object Model (DOM) is a programming interface for HTML and XML docu
 
 
 #### Other Tools
-This game was programmed wholely on [Virtual Studio Code Editor](https://code.visualstudio.com/)
+This game was assembled and tested on [Virtual Studio Code Editor](https://code.visualstudio.com/).
 
-Google images was used to find one original photo that included all four possible pieces and then they were cropped with basic Windows photo editor. Then since they still had a white background, [remove.bg](https://www.remove.bg/) was used to remove the white and convert to png images.
-
-Google Fonts was used to find the fonts.
-
-Microsoft paint was used to create the original wireframe.
 
 Google Chrome and its developer tools was used to test and render the game during production.
 
@@ -48,21 +43,11 @@ Google Chrome and its developer tools was used to test and render the game durin
 [Click to play game!](https://rileygramlich.github.io/checkers/)
 
 ### Instructions:
-The object of the game is to clear all of your opponent's pieces from the board.
-Rules:
-* Red moves first.
-* Turns alternate
-* A regular piece must move one square forward at a diagonal either to the right or left (unless capturing a piece)
-* A regular piece can capture a piece by jumping over an enemy piece and therefore moving two squares diagonally
-* If you capture a piece, you can move again. (Special rule for this version) (Regular chess is played that you must make a capture if possible and you have to continuation capture)
-* A regular piece becomes a king piece upong landing on a square that is on the last row further from his side
-* A king piece can move in any direction one square diagonally
-* A king piece can jump and capture an enemy piece in any direction and correspondingly move two square diagonally
-* You cannot jump your own pieces
-* You cannot jump more than one square
-* You can never land on a light square
-* No foul play
-* Moderate trash talking acceptable
+* The game is for two players, player 1 and player 2.
+Players take turns dropping colored discs into the grid.
+* The objective is to be the first player to get four of their own colored discs in a row, either vertically, horizontally, or diagonally.
+* If all the cells of the grid are filled and no player has won, the game ends in a draw.
+* Have fun!
 
 ## Planned future enhancements:
 * Add animations for when making a move

@@ -10,8 +10,6 @@ Connect Four is a classic two-player strategy game where players take turns drop
 To come!
 <!-- ![Screenshot of initialized game]() -->
 
-
-
 ## Technologies Used:
 The game was developed using TypeScript, HTML, CSS, and DOM manipulation.
 
@@ -51,6 +49,9 @@ Players take turns dropping colored discs into the grid.
 
 ## Planned future enhancements:
 * Add animations for when making a move
+* Add winner display as an element instead of an alert
+* Track win history
+* Display current player's turn
 * Add sound effects
 * Add in move history table
 * Add computer player logic for single player option

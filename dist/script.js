@@ -29,12 +29,14 @@ for (let row = 0; row < ROWS; row++) {
 boardElement.addEventListener("click", (event) => {
     const target = event.target;
     if (target.tagName === "TD") {
-        const col = Array.from(target.parentElement.children).indexOf(target);
-        const row = Array.from(boardElement.children).indexOf(target.parentElement);
-        if (board[row][col] === "") {
-            board[row][col] = currentPlayer;
-            target.classList.add(currentPlayer);
-            if (checkForWin(row, col)) {
+        const col = target.cellIndex;
+        const lowestEmptyRow = findLowestEmptyRow(col);
+        if (lowestEmptyRow !== -1) {
+            board[lowestEmptyRow][col] = currentPlayer;
+            const cells = boardElement
+                .getElementsByTagName("tr")[lowestEmptyRow].getElementsByTagName("td");
+            cells[col].classList.add(currentPlayer);
+            if (checkForWin(lowestEmptyRow, col)) {
                 alert(`${currentPlayer} wins!`);
             }
             else {
@@ -43,6 +45,14 @@ boardElement.addEventListener("click", (event) => {
         }
     }
 });
+function findLowestEmptyRow(col) {
+    for (let row = ROWS - 1; row >= 0; row--) {
+        if (board[row][col] === "") {
+            return row;
+        }
+    }
+    return -1;
+}
 function checkForWin(row, col) {
     let count = 0;
     for (let i = col; i >= 0 && board[row][i] === currentPlayer; i--) {
